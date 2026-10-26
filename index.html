@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover" />
+  <meta name="theme-color" content="#5ec8f8" />
+  <meta name="description" content="БАБАХ! Лови и взрывай — весёлая детская игра с шариками" />
+  <title>БАБАХ! Лови и взрывай!</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div id="app">
+    <canvas id="gameCanvas" aria-label="Игровое поле"></canvas>
+
+    <!-- Главное меню -->
+    <div id="menuScreen" class="screen">
+      <div class="menu-content">
+        <h1 class="title" aria-label="БАБАХ">БАБАХ!</h1>
+        <p class="subtitle">Лови и взрывай!</p>
+        <button id="btnPlay" class="btn btn-primary" type="button">ИГРАТЬ</button>
+        <button id="btnSmart" class="btn btn-secondary" type="button">УМНЫЙ БАБАХ</button>
+        <button id="btnMuteMenu" class="btn btn-icon" type="button" aria-label="Звук">
+          <span class="icon-sound" id="muteIconMenu">🔊</span>
+        </button>
+      </div>
+    </div>
+
+    <!-- Игровой HUD -->
+    <div id="hud" class="hud hidden">
+      <button id="btnHome" class="btn btn-hud" type="button" aria-label="В меню">🏠</button>
+      <div id="scoreBox" class="score-box" aria-live="polite">
+        <span id="scoreValue">0</span>
+      </div>
+      <button id="btnPause" class="btn btn-hud" type="button" aria-label="Пауза">⏸</button>
+      <button id="btnMuteGame" class="btn btn-hud" type="button" aria-label="Звук">
+        <span class="icon-sound" id="muteIconGame">🔊</span>
+      </button>
+    </div>
+
+    <!-- Цель для умного режима -->
+    <div id="smartTarget" class="smart-target hidden" aria-hidden="true">
+      <div id="targetBall" class="target-ball"></div>
+    </div>
+
+    <!-- Пауза -->
+    <div id="pauseOverlay" class="overlay hidden">
+      <div class="overlay-card">
+        <p class="overlay-title">ПАУЗА</p>
+        <button id="btnResume" class="btn btn-primary" type="button">ДАЛЬШЕ</button>
+        <button id="btnPauseHome" class="btn btn-secondary" type="button">МЕНЮ</button>
+      </div>
+    </div>
+
+    <!-- Всплывающий текст БАБАХ -->
+    <div id="popTextLayer" class="pop-text-layer" aria-hidden="true"></div>
+  </div>
+
+  <script src="game.js"></script>
+</body>
+</html>
